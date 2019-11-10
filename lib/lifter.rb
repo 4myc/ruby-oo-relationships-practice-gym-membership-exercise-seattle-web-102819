@@ -44,9 +44,12 @@ class Lifter
   # end
 
   def self.lifters_average
-    lifts_total = @@all.map {|lifter| lifter.lift_total}
+    lifts_total = @@all.map {|lifter| lifter.lift_total} 
       lifts_total.sum / lifts_total.length 
   end 
+  #Named instance variable and sed .map to retrieve each lifter's total
+  #Used .sum to add up all lifters' totals and divided by number of lifts
+
   # ALTERNATIVE METHOD
   # def self.lifters_average
   #   lifts_total = @@all.map do | lifter |  #going thru list of all lifters, mapping the lift total of all lifters
