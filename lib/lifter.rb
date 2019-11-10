@@ -47,7 +47,7 @@ class Lifter
     lifts_total = @@all.map {|lifter| lifter.lift_total} 
       lifts_total.sum / lifts_total.length 
   end 
-  #Named instance variable and sed .map to retrieve each lifter's total
+  #Named instance variable and used .map to retrieve each lifter's total
   #Used .sum to add up all lifters' totals and divided by number of lifts
 
   # ALTERNATIVE METHOD
