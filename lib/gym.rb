@@ -19,8 +19,8 @@ class Gym
   def lifters
     memberships.map {|m| m.lifter}
   end
-  #1 Used previous method (memberships) to find each gym's memberships
-  #2 Used .map to retrieve every lifter's name with that specific gym membership
+  # Used previous method (memberships) to find each gym's memberships
+  # Used .map to retrieve every lifter's name with that specific gym membership
 
   def name
     lifters.map {|l| l.name}
