@@ -25,7 +25,7 @@ class Lifter
   def gym_memberships
     lifter_memberships.map {|m| m.gym}
   end
-  # Used previous method (lifter_memberships) to avoid "DRY" && get each lifter's memberships
+  # Used previous method (lifter_memberships) to abstract code, avoid "DRY" && get each lifter's memberships
   # Used .map to find the names of the gyms
 
   # ALTERNATIVE METHOD #1
@@ -46,7 +46,7 @@ class Lifter
     lifts_total = @@all.map {|lifter| lifter.lift_total} 
       lifts_total.sum / lifts_total.length
   end 
-  # Named instance variable and used .map to retrieve each lifter's total
+  # Used .map to retrieve each lifter's total
   # Used .sum to add up all lifters' totals and divided by number of lifts
   # Used "method chaining" to abstract code
 
@@ -58,7 +58,7 @@ class Lifter
 
   # ALTERNATIVE METHOD #2
   # def self.lifters_average
-  #   lifts_total = @@all.map do | lifter |  #going thru list of all lifters, mapping the lift total of all lifters
+  #   lifts_total = @@all.map do |lifter|  #Using .map to go thru list of all lifters and retrieve the lift total of all lifters
   #     lifter.lift_total
   #   end 
   #     return lifts_total.inject do |sum, element| 
