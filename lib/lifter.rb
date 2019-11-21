@@ -25,10 +25,10 @@ class Lifter
   # end
 
   # Get a list of all the gyms that a specific lifter has memberships to
-  # def gym_memberships
-  #   lifter_memberships.map {|m| m.gym}
-  # end
-  # Used previous method (lifter_memberships) to abstract code, avoid "DRY" && get each lifter's memberships
+  def gym_memberships
+    lifter_memberships.map {|m| m.gym}
+  end
+  # Used previous method (lifter_memberships) a helper method to abstract code, avoid "DRY", && get each lifter's memberships
   # Used .map to find the names of the gyms
 
   # ALTERNATIVE METHOD #1
