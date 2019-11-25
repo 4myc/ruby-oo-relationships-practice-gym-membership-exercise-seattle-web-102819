@@ -29,11 +29,9 @@ class Gym
   def name
     lifters.map {|l| l.name}
   end
-  # Used previous method (lifters) as a helper method to avoid DRY
 
   # Get the combined lift total of every lifter has a membership to that gym
   def total 
     lifters.map {|l| l.lift_total}.sum
   end
-  # Used previous method (lifters) as a helper method to avoid DRY
 end

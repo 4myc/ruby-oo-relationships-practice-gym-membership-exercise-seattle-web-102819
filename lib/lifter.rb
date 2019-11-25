@@ -15,7 +15,7 @@ class Lifter
     @@all
   end
 
-  # Get a list of all the memberships that a specific lifter has
+  # Get a list of all the memberships of a specific lifter
   def lifter_memberships
     Membership.all.select {|membership| membership.lifter == self}
   end
@@ -28,8 +28,8 @@ class Lifter
   def gym_memberships
     lifter_memberships.map {|m| m.gym}
   end
-  # Used previous method (lifter_memberships) a helper method to abstract code, avoid "DRY", && get each lifter's memberships
-  # Used .map to find the names of the gyms
+  # Used previous method (lifter_memberships) as a helper method to get each lifter's memberships, abstract code, && avoid DRY
+  # Used .map to retrieve the names of the gyms
 
   # ALTERNATIVE METHOD #1
   # Membership.all.select {|membership| membership.lifter == self}.map {|m| m.gym}
@@ -50,8 +50,8 @@ class Lifter
     lifts_total = @@all.map {|lifter| lifter.lift_total} 
       lifts_total.sum / lifts_total.length
   end 
-  # Used .map to retrieve each lifter's total
-  # Used .sum to add up all lifters' totals and divided by number of lifts
+  # Used .map to go thru list of all lifters and retrieve each lifter's total
+  # Used .sum to add up all lifters' totals and divided by total number of lifts
 
   # ALTERNATIVE METHOD #1
   # def self.lifters_average
@@ -61,7 +61,7 @@ class Lifter
 
   # ALTERNATIVE METHOD #2
   # def self.lifters_average
-  #   lifts_total = @@all.map do |lifter|  #Using .map to go thru list of all lifters and retrieve the lift total of all lifters
+  #   lifts_total = @@all.map do |lifter| 
   #     lifter.lift_total
   #   end 
   #     return lifts_total.inject do |sum, element| 
