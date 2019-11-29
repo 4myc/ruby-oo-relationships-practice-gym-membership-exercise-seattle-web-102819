@@ -19,6 +19,7 @@ class Lifter
   def lifter_memberships
     Membership.all.select {|membership| membership.lifter == self}
   end
+
   # ALTERNATIVE METHOD
   # Membership.all.each do |membership|
   #   membership.lifter == self
@@ -32,9 +33,14 @@ class Lifter
   # Used .map to retrieve the names of the gyms
 
   # ALTERNATIVE METHOD #1
-  # Membership.all.select {|membership| membership.lifter == self}.map {|m| m.gym}
+  # def gym_memberships
+  #   lifter_memberships.map(&:gym) 
+  # end
 
   # ALTERNATIVE METHOD #2
+  # Membership.all.select {|membership| membership.lifter == self}.map {|m| m.gym}
+
+  # ALTERNATIVE METHOD #3
   # def gym_memberships
   #   gyms = []
   #   Membership.all.each do |membership|
@@ -55,11 +61,22 @@ class Lifter
 
   # ALTERNATIVE METHOD #1
   # def self.lifters_average
+  #   lifts_total = @@all.map(&:lift_total)
+  #     lifts_total.sum / lifts_total.length
+  # end 
+
+  # ALTERNATIVE METHOD #2
+  # def self.lifters_average
+  #   @@all.reduce(0) {|memo, lifter| memo + lifter.lift_total} / @@all.size
+  # end 
+
+  # ALTERNATIVE METHOD #3
+  # def self.lifters_average
   #   lifts_total = @@all.map {|lifter| lifter.lift_total} 
   #     lifts_total.reduce(:+) / lifts_total.size
   # end 
 
-  # ALTERNATIVE METHOD #2
+  # ALTERNATIVE METHOD #4
   # def self.lifters_average
   #   lifts_total = @@all.map do |lifter| 
   #     lifter.lift_total
