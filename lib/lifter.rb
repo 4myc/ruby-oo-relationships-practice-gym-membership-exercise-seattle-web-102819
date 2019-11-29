@@ -64,6 +64,7 @@ class Lifter
   #   lifts_total = @@all.map(&:lift_total)
   #     lifts_total.sum / lifts_total.length
   # end 
+  # &: can be used with .each and .map, NOT .select
 
   # ALTERNATIVE METHOD #2
   # def self.lifters_average
